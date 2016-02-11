@@ -303,3 +303,35 @@ html { height: 100%;}
   float: inherit;
   top: 3px;
 }
+
+.view{
+  width: inherit;
+}
+
+/*Hace que la lista del buscador no se salga del contenedor*/
+.list-group-item{
+  overflow: auto;
+}
+
+/*Categoría de la lista*/
+.list-group-item .category{
+  background-color: #2B75A3;
+  width: 20%;
+  height: 25%;
+  float: right;
+  top: 0%;
+  right: 0%;
+  position: absolute;
+}
+
+.list-group-item .category:first-child{
+  color: #FFF;
+  padding: 3px;
+  font-size: large;
+}
+
+/*Documento de la lista*/
+.list-group-item .item-image{
+  float: right !important;
+  margin-top: 4%;
+}
