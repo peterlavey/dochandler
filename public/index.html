@@ -27,28 +27,44 @@
         </div>
 
         <div class="collapse navbar-collapse navbar-ex1-collapse">
-            <ul class="col-xs-3 nav navbar-nav">
-                <li><a href="#">Capturar</a></li>
-                <li><a href="#">Gestionar</a></li>
-                <li><a href="#">Administrar</a></li>
-            </ul>
-
             <ul class="col-xs-5 nav navbar-nav">
               <form class="navbar-form" role="search">
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
+                <div class="col-xs-12 input-group">
+                    <input type="text" class="form-control" placeholder="Buscar..." name="srch-term" id="srch-term">
                     <div class="input-group-btn">
                         <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
                     </div>
                 </div>
               </form>
             </ul>
-
+            <ul class="col-xs-3 nav navbar-nav">
+                <li><a href="#" id="capturar">Capturar</a></li>
+                <li><a href="#" id="gestionar">Gestionar</a></li>
+                <li><a href="#" id="administrar">Administrar</a></li>
+            </ul>
             <ul class="col-xs-2 nav navbar-nav">
               <li><a href="#"><span class="glyphicon glyphicon-bell"></span><span class="badge">5</span></a></li>
               <li><a href="#">Juan Perez</a></li>
             </ul>
         </div>
+    </div>
+    <div class="filter-menu">
+      <div class="row" style="display: none">
+        <div class="btn-group" data-toggle="buttons">
+          <label class="btn btn-primary active">
+            <input type="checkbox" autocomplete="off" checked> Externos
+          </label>
+          <label class="btn btn-primary">
+            <input type="checkbox" autocomplete="off"> Internos
+          </label>
+          <label class="btn btn-primary">
+            <input type="checkbox" autocomplete="off"> Sin Definir
+          </label>
+        </div>
+      </div>
+      <div class="btn-filter-menu">
+        <span class="glyphicon glyphicon-chevron-down"></span>
+      </div>
     </div>
     </header>
 
@@ -86,18 +102,37 @@
         <div id="page-content-wrapper">
           <div class="container">
             <div class="row">
-              <div class="col-lg-10">
-                <h1>Contratos Pendientes de ingreso</h1>
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
+              <div id="administrar-view" class="col-lg-10">
+                <h2 class="col-xs-8">Contratos Pendientes de ingreso</h2>
+                <!--<div class="col-xs-4 facets" align="right">
+                  <a href="#" class="btn btn-pendiente btn-circle">
+                    <i class="glyphicon glyphicon-file"></i>
+                    <span class="badge">5</span>
+                  </a>
+                  <a href="#" class="btn btn-contrato inactive btn-circle">
+                    <i class="glyphicon glyphicon-file"></i>
+                    <span class="badge">12</span>
+                  </a>
+                  <a href="#" class="btn btn-contrato btn-circle">
+                    <i class="glyphicon glyphicon-file"></i>
+                    <span class="badge">12</span>
+                  </a>
+                  <a href="#" class="btn btn-sinclasificar btn-circle">
+                    <i class="glyphicon glyphicon-file"></i>
+                    <span class="badge">1</span>
+                  </a>
+                </div>-->
+                <div class="col-xs-12 input-group">
+                    <input type="text" class="form-control" placeholder="Buscar..." name="srch-term" id="srch">
                     <div class="input-group-btn">
                         <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
                     </div>
                 </div>
                 <div class="list-group">
                   <a href="#" class="list-group-item">
-                      <div class="category" align="center">
+                      <div class="category contrato" align="center">
                         Contrato
+                        <span class="badge">2</span>
                       </div>
                       <p class="col-xs-10">
                         La reclamación fue interpuesta por Sergio Reiss G., quien entre otros puntos, argumentó que durante la EIA del proyecto, el SEA dejó fuera del proceso de la <mark>participación ciudadana</mark> información relevante, especialmente en relación a emisiones atmosféricas y ruido. Lo anterior habría ocurrido –según el reclamante- porque el servicio accedió a la solicitud de reserva de información realizada por el MOP.
@@ -109,7 +144,8 @@
                   </a>
                   <a href="#" class="list-group-item">
                       <div class="category" align="center">
-                        Contrato
+                        Sin Clasificar
+                        <span class="badge">9</span>
                       </div>
                       <p class="col-xs-10">
                         La reclamación fue interpuesta por Sergio Reiss G., quien entre otros puntos, argumentó que durante la EIA del proyecto, el SEA dejó fuera del proceso de la <mark>participación ciudadana</mark> información relevante, especialmente en relación a emisiones atmosféricas y ruido. Lo anterior habría ocurrido –según el reclamante- porque el servicio accedió a la solicitud de reserva de información realizada por el MOP.
@@ -119,8 +155,9 @@
                       </div>
                   </a>
                   <a href="#" class="list-group-item">
-                      <div class="category" align="center">
-                        Contrato
+                      <div class="category pendiente" align="center">
+                        Pendiente
+                        <span class="badge">1</span>
                       </div>
                       <p class="col-xs-10">
                         La reclamación fue interpuesta por Sergio Reiss G., quien entre otros puntos, argumentó que durante la EIA del proyecto, el SEA dejó fuera del proceso de la <mark>participación ciudadana</mark> información relevante, especialmente en relación a emisiones atmosféricas y ruido. Lo anterior habría ocurrido –según el reclamante- porque el servicio accedió a la solicitud de reserva de información realizada por el MOP.
@@ -131,6 +168,122 @@
                         <img src="img/xlsx45.png">
                       </div>
                   </a>
+                </div>
+              </div>
+              <div id="gestionar-view" class="col-xs-10" style="display:none">
+                <h2>Nombre del Documento</h2>
+                <div class="col-xs-6">
+                  <ul class="nav nav-tabs">
+                    <li class="active"><a data-toggle="tab" href="#pendientes">Pendientes</a></li>
+                    <li><a data-toggle="tab" href="#eventos">Eventos</a></li>
+                    <li><a data-toggle="tab" href="#procesos">Procesos</a></li>
+                  </ul>
+
+                  <div class="tab-content">
+                    <div id="pendientes" class="tab-pane fade in active">
+                      <table class="table">
+                        <thead>
+                          <th>
+                            Tarea
+                          </th>
+                          <th>
+                            Usuario
+                          </th>
+                          <th>
+                            Fecha
+                          </th>
+                          <th>
+                            Completar
+                          </th>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>
+                              Revisar
+                            </td>
+                            <td>
+                              Juan Perez
+                            </td>
+                            <td>
+                              01/05/2015
+                            </td>
+                            <td>
+                              Comenzar
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              Revisar
+                            </td>
+                            <td>
+                              Juan Perez
+                            </td>
+                            <td>
+                              01/05/2015
+                            </td>
+                            <td>
+                              Comenzar
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              Revisar
+                            </td>
+                            <td>
+                              Juan Perez
+                            </td>
+                            <td>
+                              01/05/2015
+                            </td>
+                            <td>
+                              Comenzar
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <div id="eventos" class="tab-pane fade">
+                      <table class="table">
+                        <tbody>
+                          <tr>
+                            <td>
+                              2-Dic
+                            </td>
+                            <td>
+                              Ingresado a Registro
+                            </td>
+                            <td>
+                              Juan Perez
+                            </td>
+                            <td>
+                              Comenzar
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              2-Dic
+                            </td>
+                            <td>
+                              Ingresado a Registro
+                            </td>
+                            <td>
+                              Juan Perez
+                            </td>
+                            <td>
+                              Comenzar
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <div id="procesos" class="tab-pane fade">
+                      <h3>Menu 2</h3>
+                      <p>Some content in menu 2.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-6">
+                  asdasdasd
                 </div>
               </div>
             </div>

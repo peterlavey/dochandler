@@ -315,13 +315,27 @@ html { height: 100%;}
 
 /*Categoría de la lista*/
 .list-group-item .category{
-  background-color: #2B75A3;
+  background-color: #7D5D81;
   width: 20%;
   height: 25%;
   float: right;
   top: 0%;
   right: 0%;
   position: absolute;
+}
+
+.list-group-item .category > .badge{
+  position: initial;
+  background-color: #FFF;
+  color: #000;
+}
+
+.contrato{
+    background-color: #2B75A3 !important;
+}
+
+.pendiente{
+    background-color: #EC1B5A !important;
 }
 
 .list-group-item .category:first-child{
@@ -334,4 +348,84 @@ html { height: 100%;}
 .list-group-item .item-image{
   float: right !important;
   margin-top: 4%;
+}
+
+/*Botón circular de los facets*/
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.42;
+  border-radius: 15px;
+  margin: 0 2% 0 2%;
+}
+
+.facets{
+  margin-top: 3%;
+}
+
+/*Badge*/
+.btn .badge{
+  position: absolute;
+}
+
+.btn-contrato{
+  background-image: linear-gradient(to bottom,#2B75A3 0,#1A6492 100%);
+  background-repeat: repeat-x;
+  border-color: #1A6492;
+  color: #FFF;
+}
+
+.btn-sinclasificar{
+  background-image: linear-gradient(to bottom,#7D5D81 0,#6C4C70 100%);
+  background-repeat: repeat-x;
+  border-color: #6C4C70;
+  color: #FFF;
+}
+
+.btn-pendiente{
+  background-image: linear-gradient(to bottom,#EC1B5A 0,#DB0A49 100%);
+  background-repeat: repeat-x;
+  border-color: #CA0935;
+  color: #FFF;
+}
+
+.inactive{
+  background-image: linear-gradient(to bottom,#FFF 0,#FFF 100%);
+  background-repeat: repeat-x;
+  color: inherit;
+}
+
+/*Menu del header con filtros*/
+.filter-menu{
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 8%;
+  /*height: 43%;*/
+  position: fixed;
+  z-index: 1029;
+}
+
+.btn-filter-menu{
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 5%;
+  height: 25%;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  border-radius: 0 0 15px 15px;
+  transition: height .5s
+}
+
+.filter-menu .row{
+  position: absolute;
+  top: 50%;
+  padding: 0 2% 0 2%;
+}
+
+.btn-filter-menu>span{
+  position: absolute;
+  left: 43%;
 }
